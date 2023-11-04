@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% import "bootstrap/wtf.html" as wtf %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Please add new cafe details to below form</h1>
+    <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+       {{ wtf.quick_form(form, novalidate=True, button_map={"submit": "primary"}) }}
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

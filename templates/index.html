@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cafe&Wifi API</title>
+    <style>
+
+        .container{
+            display: grid;
+            grid-template-columns: 1fr 2.8fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+        }
+
+        .img{
+            height: 300px;
+            width: 400px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Cafe and Wifi</h1>
+    <h2>Friendly work places</h2>
+    <div class="container">
+        {% for cafe in cafes["cafe"] %}
+        <div class="image">
+            <img class="img" src="{{cafe['img_url']}}" alt="a cafe">
+        </div>
+        <div class="text">
+            <p>{{cafe['name']}}</p>
+            <p>{{cafe['location']}}</p>
+            <p> <a href="{{url_for('show_details', cafe_id=cafe.id) }}"> Additional Details </a> </p>
+            <a href="{{url_for('delete', cafe_id=cafe.id) }}"> <button> Delete Cafe </button> </a>
+        </div>
+        {% endfor %}
+
+    </div>
+    <a href="{{url_for('add_new') }}"> <button> Add Cafe </button> </a>
+</body>
+</html>

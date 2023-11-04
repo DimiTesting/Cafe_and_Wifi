@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <style>
+        .image{
+            height: 300px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>{{selected_cafe.name}}</h2>
+        <img class="image" src="{{selected_cafe.img_url}}" alt="image">
+        <p>Price for normal coffee : {{selected_cafe.coffee_price}}</p>
+        <p>Has toilet: {{selected_cafe.has_toilet}}</p>
+        <p>Has wifi: {{selected_cafe.has_wifi}}</p>
+        <p>Has sockets: {{selected_cafe.has_sockets}}</p>
+        <p>Can take calls: {{selected_cafe.can_take_calls}}</p>
+    </div>
+</body>
+</html>
